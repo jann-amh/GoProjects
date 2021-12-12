@@ -24,7 +24,7 @@ func NewTwitchBot(resources settings.Resources) TwitchBot {
 	})
 
 	twitchBot.twitchClient.OnPrivateMessage(func(message irc.PrivateMessage) {
-		fmt.Println(message.Message)
+		fmt.Println(message.Channel, "|", message.User.Name+":", message.Message)
 	})
 	return twitchBot
 }
