@@ -6,8 +6,6 @@ import (
 	irc "github.com/gempir/go-twitch-irc/v2"
 )
 
-func Handle(bot *twitchBot.TwitchBot, chatMessage irc.PrivateMessage) {
-	if chatMessage.Message == "goping" {
-
-	}
+func HandlePing(bot *twitchBot.TwitchBot, chatMessage irc.PrivateMessage) {
+	bot.Send(chatMessage.Channel, "Pong")
 }
